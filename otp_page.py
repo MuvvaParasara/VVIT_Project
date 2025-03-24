@@ -32,6 +32,7 @@ def otp_page():
             email = st.session_state["current_user"]
             if int(otp) == int(fetch_otp(user)):
                 user = fetch_user(email)
+                print(user)
                 st.success(f"Welcome back, {user[1]}!")
                 navigate_to_page("user_home")
             else:

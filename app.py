@@ -4,8 +4,10 @@ from login_page import login_page
 from signup_page import signup_page
 from user_home_page import user_home_page
 from otp_page import otp_page
+from database import create_table
 st.set_page_config(page_title="HepaWise", page_icon="🫁")
 
+create_table()
 # Initialize session state
 if "current_page" not in st.session_state:
     st.session_state["current_page"] = "home"
