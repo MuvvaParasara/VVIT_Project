@@ -7,6 +7,26 @@
 - So far we are using the root credentials to log in to the console.
 - ⁠TODO: Create IAM roles, groups and assign users for individual contributors
 
+## Environment Variables Setup
+### Using Terraform provider configuration (Recommended)
+- Open provider.tf file
+- Add keys config in the aws provider section
+  ```
+  provider "aws" {
+    access_key = "REPLACE WITH VALID KEY"
+    secret_key = "REPLACE WITH VALID KEY"
+    region     = "us-east-1"
+  }
+  ```
+### Through Env file
+- Create a file `.env`
+- Add below content to the file with valid credentials from AWS console -> IAM
+  ```
+  AWS_ACCESS_KEY_ID=`Replace with right key`
+  AWS_SECRET_ACCESS_KEY=`Replace with right key`
+  AWS_DEFAULT_REGION=us-east-1
+  ```
+
 ## Terraform usage
 
 - ⁠We tried Terraform which is the Infrastructure as code (IAC)
